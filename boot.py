@@ -109,3 +109,13 @@ import gc
 import webrepl
 webrepl.start()
 gc.collect()
+
+# Onboard LED Setup specific to ESP01S esp8266
+from machine import Pin, Signal
+led = Signal(2, Pin.OUT, invert=True)
+# https://github.com/micropython/micropython/blob/master/examples/hwapi/hwconfig_esp8266_esp12.py
+# ESP12 module as used by many boards
+# Blue LED on pin 2, active low (inverted)
+# led.on()
+# led.off()
+led.on()
